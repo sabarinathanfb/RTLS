@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup and Monitoring Dashboards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-brand">RTLS App</div>
+        <ul class="navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+    
+
+    <div class="sidebar">
+        <!-- Setup Dashboard Section -->
+        <button id="setupPageButton">Setup Dashboard</button>
+        
+        <!-- Hidden by default -->
+        <div id="setupOptions" style="display: none;">
+            <input type="text" id="zoneNameInput" placeholder="Enter Zone Name" autocomplete="off"/>
+            <label for="zoneDropdown">Select Zone:</label>
+            <select id="zoneDropdown">
+                <option value="">Select Zone</option>
+            </select>
+            <button id="deleteZoneBtn">Delete Selected Zone</button>
+            
+            <input type="text" id="botNameInput" placeholder="Enter Bot Name" />
+            <button id="createBotModel">Create Bot</button> 
+        </div>
+        
+        <!-- Monitoring Dashboard Section -->
+        <button id="monitoringPageButton">Monitoring Dashboard</button>
+        
+        <!-- Hidden by default -->
+        <div id="monitoringOptions" style="display: none;">
+            <button id="getEntriesButton">Get All Entries</button>
+            <button id="bot_1_button">Bot 1</button>
+            
+            <label for="botDropdown">Select Bot:</label>
+            <select id="botDropdown">
+                <option value="">Select Bot</option>
+                <!-- Add bot options here -->
+            </select>
+            
+            <button id="orbitToggle">Orbit Control: ON</button>
+            <button id="animatePosition">Start Animation</button>
+        </div>
+    
+    </div>
+    
+    <div id="myThreeJsContainer">
+        <!-- The Three.js scene will be rendered here -->
+    </div>
+    <!-- Linking JavaScript -->
+    <script type="module" src="main.js"></script>
+    <script>
+        // Get the setup button and the hidden setup options div
+        const setupPageButton = document.getElementById('setupPageButton');
+        const setupOptions = document.getElementById('setupOptions');
+        
+        // Get the monitoring button and the hidden monitoring options div
+        const monitoringPageButton = document.getElementById('monitoringPageButton');
+        const monitoringOptions = document.getElementById('monitoringOptions');
+    
+        // Function to show Setup Dashboard and hide Monitoring Dashboard
+        setupPageButton.addEventListener('click', function() {
+
+            if(setupOptions.style.display !== 'block'){
+                setupOptions.style.display = 'block';
+            }else{
+                setupOptions.style.display = 'none'
+            }
+
+        });
+
+        // Function to show Monitoring Dashboard and hide Setup Dashboard
+        monitoringPageButton.addEventListener('click', function() {
+            
+            if(monitoringOptions.style.display !== 'block'){
+                monitoringOptions.style.display = 'block';
+            }else{
+                monitoringOptions.style.display = 'none';
+            }
+     
+        });
+    </script>
+
+</body>
+</html>

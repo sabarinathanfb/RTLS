@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f7f9;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    color: rgb(107, 131, 211);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-nav li {
+    margin-left: 20px;
+}
+
+.navbar-nav li a {
+    color: rgb(97, 120, 168);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-nav li a:hover {
+    color: #ffcc00;
+}
+
+/* Sidebar Styles */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin-top: 60px; /* Space for navbar */
+}
+
+.sidebar {
+    width: 350px;
+    background-color: #ffffff;
+    color: rgb(17, 36, 214);
+    padding: 20px;
+    position: fixed;
+    top: 60px; /* Below the navbar */
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 15px;
+    background-color: #3b587d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.sidebar button:hover {
+    background-color: #52729a;
+}
+
+/* Content Area */
+.content {
+    margin-left: 250px; /* Space for sidebar */
+    padding: 20px;
+    width: calc(100% - 350px);
+    height: calc(100vh - 60px); /* Full height minus navbar */
+    overflow-y: auto;
+    background-color: #f4f7f9;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Three.js Container Styles */
+#myThreeJsContainer {
+    /* width: calc(100% - 250px); Full width minus sidebar */
+    /* height: calc(100vh - 60px); Full height minus navbar */
+    margin-left: 250px; /* Push the container to the right */
+    margin-top: 60px; /* Push the container down for navbar */
+    border: 1px solid black;
+}
